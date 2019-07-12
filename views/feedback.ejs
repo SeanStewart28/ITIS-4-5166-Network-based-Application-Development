@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Feedback</title>
+    <link href="../stylesheets/style.css" rel="stylesheet" type="text/css">
+    <script src="../assets/functionality.js"></script>
+    <style>
+        img {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 5px;
+            width: 350px;
+        }
+        img:hover {
+            box-shadow: 0 0 2px 1px rgba(32, 57, 175, 0.5);
+        }
+    </style>
+</head>
+
+<% include design/header.ejs %>
+<% include design/user-navigation.ejs %>
+<% include design/site-navigation.ejs %>
+
+<div class="main">
+    <img src='<%= theItem.imageURL %>' alt='<% theItem.itemName %>' height="200" width="200" class="pic_padding">
+    <h3><%= theItem.itemName %></h3>
+    <h3><%= theItem.category %></h3>
+    <p><%= theItem.description %></p>
+    <form action='/myParts/updateRating' method='POST'>
+        <input type="number" name='rating' min='1' max='5' value='<%= theItem.rating %>'>
+        <button>Confirm Rating</button>
+        <!-- Inputs used to send data, and will stay hidden !-->
+        <input type="hidden" name='itemCode' value='<%= theItem.itemCode %>'>
+        <input type="hidden" name='itemName' value='<%= theItem.itemName %>'>
+        <input type="hidden" name='category' value='<%= theItem.catalogCategory %>'>
+        <input type="hidden" name='description' value='<%= theItem.description %>'>
+        <input type="hidden" name='imageURL' value='<%= theItem.imageURL %>'>
+        <input type='hidden' name='madeIt' value='<%= theItem.madeIt %>'>
+    </form>
+    <br>
+    <form action='/myParts/updateFlag' method='POST'>
+      <!-- Changes madeIt value based on whether user has purchased item or not. !-->
+        <% if(theItem.madeIt == 'true') { %>
+            <input type='radio' name='madeIt' value='No'>No<br>
+            <input type='radio' name='madeIt' value='Yes' checked>Yes<br>
+        <% } else { %>
+            <input type='radio' name='madeIt' value='No' checked>No<br>
+            <input type='radio' name='madeIt' value='Yes' >Yes<br>
+        <% } %>
+        <button>Did You Buy It?</button>
+        <!-- Inputs used to send data, and will stay hidden !-->
+        <input type="hidden" name='itemCode' value='<%= theItem.itemCode %>'>
+        <input type="hidden" name='itemName' value='<%= theItem.itemName %>'>
+        <input type="hidden" name='category' value='<%= theItem.catalogCategory %>'>
+        <input type="hidden" name='description' value='<%= theItem.description %>'>
+        <input type="hidden" name='imageURL' value='<%= theItem.imageURL %>'>
+        <input type='hidden' name='rating' value='<%= theItem.rating %>'>
+    </form>
+</div>
+</div>
+
+<% include design/footer.ejs %>
+
+</html>

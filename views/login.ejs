@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="/../stylesheets/style.css" />
+    <script src="../assets/functionality.js"></script>
+</head>
+
+  <body>
+
+    <% include design/header.ejs %>
+    <% include design/user-navigation.ejs %>
+    <% include design/site-navigation.ejs %>
+
+      <div class="main">
+        <h2>Sign-In</h2>
+        <p>Enter your username and password to sign in.</p>
+        <!-- Will check for validations errors when sign in, and list all errors. !-->
+        <% if(err) { %>
+        <section class="errors">
+          <!-- Will see below message if errors occur. !-->
+          <h4>Username or password is invalid. Please try again.</h4>
+        <% } %>
+      </section>
+        <form action='/myParts' method='POST'>
+          <p><b>Username:</b></p>
+          <input type="text" name='username'><br>
+
+          <p><b>Password:</b></p>
+          <input type="password" name='password'><br>
+
+          <br>
+          <input type="submit" value='Submit'>
+        </form>
+      </form>
+
+      <br>
+      <b><p>Don't have an account?</p></b>
+      <form method="GET" action="/register">
+          <button>Sign Up</button>
+      </form>
+
+      </div>
+    </div>
+
+      <% include design/footer.ejs %>
+
+  </body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="/../stylesheets/style.css" />
+    <script src="../assets/functionality.js"></script>
+</head>
+
+  <body>
+    <% include design/header.ejs %>
+    <% include design/user-navigation.ejs %>
+    <% include design/site-navigation.ejs %>
+
+      <div class="main">
+        <h2>Sign-Up</h2>
+        <p>Please fill out the form below to create an account!</p>
+
+      </section>
+        <form action='/myParts/register' method='POST'>
+          <p><b>Username:</b></p>
+          <input type="text" name='username'><br>
+
+          <p><b>Password:</b></p>
+          <input type="password" name='password'><br>
+
+          <p><b>Email:</b></p>
+          <input type="email" name='email'><br>
+
+          <p><b>First Name:</b></p>
+          <input type="text" name='firstName'><br>
+
+          <p><b>Last Name:</b></p>
+          <input type="text" name='lastName'><br>
+
+          <br>
+          <input type="submit" value='Submit'>
+        </form>
+      </form>
+
+      <br>
+      <b><p>If you have an account with us</p></b>
+      <form method="GET" action="/myParts/login">
+          <button>Sign In</button>
+      </form>
+      </div>
+    </div>
+
+      <% include design/footer.ejs %>
+
+  </body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Items</title>
+    <link href="../stylesheets/style.css" rel="stylesheet" type="text/css">
+    <script src="../assets/functionality.js"></script>
+    <style>
+        img {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 5px;
+            width: 100px;
+        }
+    </style>
+</head>
+
+<% include design/header.ejs %>
+<% include design/user-navigation.ejs %>
+<% include design/site-navigation.ejs %>
+
+<div class="main">
+<table>
+  <tr>
+    <th>Item</th>
+    <th>Category</th>
+    <th>My Rating</th>
+    <th>Bought It?</th>
+  </tr>
+
+  <% for(var i=0; i<userItemList.length; i++){ %>
+    <tr>
+      <td><%= userItemList[i].itemName %></td>
+      <td><%= userItemList[i].catalogCategory %></td>
+      <td><%= userItemList[i].rating %></td>
+      <td><%= userItemList[i].madeIt %></td>
+      <td>
+        <form action='/myParts/updateProfile' method='POST'>
+          <button>Update</button>
+          <!-- Inputs used to send data, and will stay hidden !-->
+          <input type="hidden" name='itemCode' value='<%= userItemList[i].itemCode %>'>
+          <input type="hidden" name='itemName' value='<%= userItemList[i].itemName %>'>
+          <input type="hidden" name='category' value='<%= userItemList[i].catalogCategory %>'>
+          <input type="hidden" name='description' value='<%= userItemList[i].description %>'>
+          <input type="hidden" name='imageURL' value='<%= userItemList[i].imageURL %>'>
+          <input type='hidden' name='rating' value='<%= userItemList[i].rating %>'>
+          <input type='hidden' name='madeIt' value='<%= userItemList[i].madeIt %>'>
+        </form>
+      </td>
+      <td>
+        <form action='/myParts/deleteItem' method='POST'>
+          <button>Delete</button>
+          <!-- Inputs used to send data, and will stay hidden !-->
+          <input type="hidden" name='itemCode' value='<%= userItemList[i].itemCode %>'>
+          <input type="hidden" name='itemName' value='<%= userItemList[i].itemName %>'>
+          <input type="hidden" name='category' value='<%= userItemList[i].catalogCategory %>'>
+          <input type="hidden" name='description' value='<%= userItemList[i].description %>'>
+          <input type="hidden" name='imageURL' value='<%= userItemList[i].imageURL %>'>
+          <input type='hidden' name='rating' value='<%= userItemList[i].rating %>'>
+          <input type='hidden' name='madeIt' value='<%= userItemList[i].madeIt %>'>
+        </form>
+      </td>
+    </tr>
+  <% } %>
+</table>
+    <br>
+    <a href="/categories">Go Back</a>
+    <br>
+    <p style="font-size: 15px;">Would you like to <a href="#">share</a> this item?</p>
+</div>
+
+<% include design/footer.ejs %>
+
+</html>

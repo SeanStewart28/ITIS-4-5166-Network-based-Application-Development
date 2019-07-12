@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Items</title>
+    <link href="../stylesheets/style.css" rel="stylesheet" type="text/css">
+    <script src="../assets/functionality.js"></script>
+    <style>
+        img {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 5px;
+            width: 350px;
+        }
+        img:hover {
+            box-shadow: 0 0 2px 1px rgba(32, 57, 175, 0.5);
+        }
+    </style>
+</head>
+
+<% include design/header.ejs %>
+<% include design/user-navigation.ejs %>
+<% include design/site-navigation.ejs %>
+
+<div class="main">
+  <img src='<%= item.imageURL %>' alt='<% item.itemName %>' height="200" width="200" class="pic_padding">
+  <h2><%= item.itemName %></h2>
+  <h3><%= item.catalogCategory %></h3>
+  <div class="inner">
+      <form action='/myParts/save' method='POST'>
+        <button>Save It</button>
+        <!-- Inputs used to send data, and will stay hidden !-->
+        <input type="hidden" name='itemCode' value='<%= item.itemCode %>'>
+        <input type="hidden" name='itemName' value='<%= item.itemName %>'>
+        <input type="hidden" name='category' value='<%= item.catalogCategory %>'>
+        <input type="hidden" name='description' value='<%= item.description %>'>
+        <input type="hidden" name='imageURL' value='<%= item.imageURL %>'>
+        <input type="hidden" name='rating' value='0'>
+        <input type="hidden" name='madeIt' value='false'>
+      </form>
+  </div>
+  <div class="inner">
+    <form action='/myParts' method='GET'>
+      <button>Rate It</button>
+    </form>
+  </div>
+  <p><br><b>Description:</b><br> <%= item.description %></p>
+  <div class="inner">
+  <a href='/categories'><button>Go Back</button></a>
+  </div>
+</div>
+</div>
+
+<% include design/footer.ejs %>
+
+</html>

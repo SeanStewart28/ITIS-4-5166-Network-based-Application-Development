@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Categories</title>
+    <link href="../stylesheets/style.css" rel="stylesheet" type="text/css">
+    <script src="../assets/functionality.js"></script>
+</head>
+
+
+<% include design/header.ejs %>
+<% include design/user-navigation.ejs %>
+<% include design/site-navigation.ejs %>
+
+<div class="main">
+    <h3><br>Graphics Cards</h3>
+      <ul>
+        <% for(var i=0; i<list.length; i++){ %>
+          <% if(list[i].catalogCategory === "Graphics Cards") { %>
+            <li><a href ="categories/item?itemCode=<%= list[i].itemCode %>"><%= list[i].itemName %></a></li>
+          <% } else {} %>
+        <% } %>
+      </ul>
+
+      <h3><br>CPU's</h3>
+        <ul>
+          <% for(var i=0; i<list.length; i++){ %>
+            <% if(list[i].catalogCategory === "CPU") { %>
+              <li><a href ="categories/item?itemCode=<%= list[i].itemCode %>"><%= list[i].itemName %></a></li>
+            <% } else {} %>
+          <% } %>
+        </ul>
+
+    <h3><br>Towers</h3>
+      <ul>
+        <% for(var i=0; i<list.length; i++){ %>
+          <% if(list[i].catalogCategory === "Tower") { %>
+            <li><a href ="categories/item?itemCode=<%= list[i].itemCode %>"><%= list[i].itemName %></a></li>
+          <% } else {} %>
+        <% } %>
+      </ul>
+</div>
+
+<% include design/footer.ejs %>
+
+</html>

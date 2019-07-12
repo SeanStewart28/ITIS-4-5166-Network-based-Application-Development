@@ -1,0 +1,295 @@
+@font-face {
+    font-family: Calibri-light;
+}
+
+div {
+    font-family: Calibri-light;
+}
+
+/*----Logo Bar----*/
+#wrapper {
+    width:1000px;
+    margin:0 auto;
+    padding:10px 0 10px 0;
+}
+
+#header {
+    padding:0px 0px 5px;
+}
+
+#header .top_banner{
+    background:url(../images/menubackground.jpg);
+    height:95px;
+    padding:75px 95px 0 295px;
+    border:#496066 solid 1px;
+}
+/*----End Logo Bar----*/
+
+/*----Top Navigation Bar----*/
+#topNavBar {
+    background-color: #d0cac8;
+    border: 1px solid black;
+    text-align: right;
+    padding: 5px;
+    margin-left: 165px;
+}
+
+/*----End Top Navigation Bar----*/
+
+/*----Side Navigation Bar----*/
+.navBar {
+    height: 71%;
+    width: 160px;
+    position: absolute;
+    top: 206px;
+    left: 0;
+    padding-top: 20px;
+    background-color: rgba(208, 202, 200, 0.8);
+    border: 1px solid black;
+}
+
+.navbarButton {
+    position: absolute;
+    left: 11px;
+    text-decoration: none;
+    font-size: 110%;
+}
+/*----End Side Navigation Bar----*/
+
+#addItem {
+    position: left;
+}
+
+#col1 {
+    padding-left: 2em;
+    padding-right: 15em;
+    display:inline-block;
+}
+#col2 {
+    padding-right: 7em;
+    display:inline-block;
+}
+#col3 {
+    padding-right: 6em;
+    display:inline-block;
+}
+#col4 {
+    display:inline-block;
+}
+#imgOn {
+    float: left;
+}
+
+.tableButton {
+    background-color: #8a0308;
+    border: none;
+    color: #f8fdff;
+    padding: 12px 22px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+}
+
+.logo {
+    position: relative;
+}
+
+.signInTop {
+    position: absolute;
+    right: 32px;
+    top: 165px;
+    color: #000211;
+}
+
+.main {
+    margin-left: 160px;
+    padding: 0px 10px;
+}
+
+
+/*----Table content----*/
+.checked {
+    color: orange;
+}
+
+a {
+    color: black;
+}
+
+a:hover {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+li {
+    list-style-type: square;
+    padding-top: 3px;
+    padding-bottom:5px;
+}
+
+table {
+    border-collapse: collapse;
+    border-color: #000000;
+    border-spacing: 50px 0;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 5px 20px;
+}
+
+tr {
+    background-color: #fffdf6;
+    color: #000000;
+}
+
+html {
+    font-family: Calibri-light, sans-serif;
+    background-color: #f3f3f3;
+    color: #000000;
+}
+
+p {
+    font-size: 16px;
+}
+
+#myList {
+    list-style-type: none;
+}
+
+#firstRow {
+    background-color: rgba(0, 0, 0, 0.82);
+    color: #fffdf6;
+}
+/*----End Table content----*/
+
+/*----Start Footer content----*/
+footer {
+    position: absolute;
+    left: 170px;
+    bottom: 0;
+    width: 75%;
+    color: black;
+}
+
+#footer{
+    clear:both;
+    margin-top:18px;
+    padding:15px 0 12px 0;
+    height:25px;
+    text-align:left;
+    font-family:Verdana, Geneva, sans-serif;
+    font-size:12px;
+    line-height:19px;
+    border-top:#b9bdbe solid 1px;
+}
+
+#footer a{
+    color: #1B5219;
+    text-decoration:none;
+}
+
+#footer a:hover{
+    color: #1B5219;
+    text-decoration:underline;
+}
+/*----End Footer content----*/
+
+/*----Feedback content----*/
+.star-rating {
+    direction: rtl;
+    display: inline-block;
+    padding: 20px
+}
+
+.star-rating input[type=radio] {
+    display: none
+}
+
+.star-rating label {
+    color: #bbb;
+    font-size: 18px;
+    padding: 0;
+    cursor: pointer;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out
+}
+
+.star-rating label:hover,
+.star-rating label:hover ~ label,
+.star-rating input[type=radio]:checked ~ label {
+    color: #f2b600
+}
+/*----End Feedback content----*/
+
+/*----Breadcrumb----*/
+ul.breadcrumb {
+    padding: 10px 16px;
+    list-style: none;
+    background-color: #eee;
+}
+
+ul.breadcrumb li {
+    display: inline;
+    font-size: 18px;
+}
+
+ul.breadcrumb li+li:before {
+    padding: 8px;
+    color: black;
+    content: "/\00a0";
+}
+
+ul.breadcrumb li a {
+    color: #0275d8;
+    text-decoration: none;
+}
+
+ul.breadcrumb li a:hover {
+    color: #01447e;
+    text-decoration: underline;
+}
+/*----End Breadcrumb content----*/
+
+/*----Login Form----*/
+.input label {
+  display: block;
+}
+
+form button {
+  font: inherit;
+  margin: 10px 0;
+  border-radius: 0;
+  border: none;
+  box-shadow: 2px 2px 2px #ccc;
+  color: white;
+  background: #3498db;
+  cursor: pointer;
+}
+
+form button:hover {
+  background: #2980b9;
+}
+
+.errors {
+  background: #e79892;
+  padding: 5px;
+  margin-bottom: 10px;
+  min-width: 200px;
+  display: inline-block;
+  border: 1px solid #e74c3c;
+}
+
+.errors ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.success {
+  background: #80cca0;
+  padding: 5px;
+}
+/*----End Login Form----*/

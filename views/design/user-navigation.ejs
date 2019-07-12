@@ -1,0 +1,19 @@
+<div id="topNavBar">
+    <form>
+      <div><right>
+        <!-- If signed in, will display username !-->
+        <%if (typeof userName !== 'undefined'){ %>
+          <label>Signed In: <b><%=userName%>! </b></label>
+          <% } else{ %>
+          <% }%>
+          </right></div> |
+          <!-- If signed out, will display login/register !-->
+      <%if (typeof userName !== 'undefined'){ %>
+      <a href="/index">Logout</a>
+      <% } else { %>
+      <a href="/myParts/login">Login/Register</a>
+      <% } %> |
+      <a href="/myParts" class="userSpecNavButton">My Items</a> |
+      <a href="#" class="userSpecNavButton">Cart</a> |
+    </form>
+</div>
